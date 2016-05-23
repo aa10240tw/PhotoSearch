@@ -6,10 +6,10 @@
 	  	die("錯誤: 無法選擇資料庫!" . mysqli_error($db));
 	//接取表單
 	$search = $_GET['q'];
-	$sql_searh = "";
+	$sql_search = "";
 	if(!empty($search))
 	{
-		$sql_searh = "(Descreption like '%$search%' or Title like '%$search%') and ";
+		$sql_search = "(Descreption like '%$search%' or Title like '%$search%') and ";
 	}
 	$size = $_GET['size'];
 	$sql_size = "";
@@ -26,9 +26,20 @@
 		$height = 600;
 		$sql_size = " and width < ".$width." and height < ".$height." ";
 	}
-	$authType = $_GET['authType'];
+
+	$authType = $_GET['authType'] - 1;
+	$sql_authType = "";
+	if($authType == 0)
+	{
+		$sql_authType = "authType between 1 and 4 ";
+	}
+	else
+	{
+		$sql_authType = "authType = ".$authType;
+	}
+
 	//搜尋
-	$sql = "select image from pics where ".$sql_searh."AuthType = ".$authType.$sql_size."; ";
+	$sql = "select image from pics where ".$sql_search.$sql_authType.$sql_size."; ";
 	$result = mysqli_query($db,$sql);
 ?>
 

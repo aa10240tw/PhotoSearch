@@ -23,15 +23,23 @@
 		$height = 600;
 		$sql_size = " and width < ".$width." and height < ".$height." ";
 	}
-	$authType = $_GET['authType'];
-	
+	$authType = $_GET['authType'] - 1;
+	$sql_authType = "";
+	if($authType == 0)
+	{
+		$sql_authType = "and authType between 1 and 4 ";
+	}
+	else
+	{
+		$sql_authType = "and authType = ".$authType;
+	}
 	//搜尋
 	if(!empty($search))
 	{
 		//標籤關鍵字
 		$sql = "select image from pics , Pic_tag
 				where pics.ID = Pic_tag.Pic_ID and 
-				Pic_tag.tag_name = '".$search."' and AuthType = ".$authType.$sql_size."; ";
+				Pic_tag.tag_name = '".$search."'".$sql_authType.$sql_size."; ";
 	}
 	else
 	{

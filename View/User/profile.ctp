@@ -153,11 +153,13 @@ function wordsCount()
 						照片簡述：(200字以內)	剩餘字數：<span id="wordcount">200</span><br/>
 							<textarea maxlength="200" type="text" name="newPicintro" id="intro" onkeyup="wordsCount()" style="BORDER-RIGHT: 2px dotted; BORDER-TOP: 2px dotted; OVERFLOW: hidden; BORDER-LEFT: 2px dotted; WIDTH: 230px; COLOR:#999;BORDER-BOTTOM: 2px dotted;HEIGHT: 100px"></textarea><br/><br/>
 						照片標籤：
-							<input type="button" value="新增標籤" onclick="add_input(PicTag)"><br/>
-							<legend id ="PicTag" name="PicTag"></legend>
+							<input type="text" id="tagValue" placeholder="請輸入標籤">
+							<input type="button" value="新增" onclick="add(PicTag)"><br/>
+							<div id ="PicTag"></div>
+							<legend id ="HiddenTag" name="PicTag" type = "hidden"></legend>
 							<br/><br/>
 						</p>
-	  				<input type="submit" style="color:#000" value="上傳檔案" />
+	  				<input type="submit" style="color:#000" value="上傳檔案" onclick="addH(PicTag,HiddenTag)" />
 				</form>
 	    	</div>
 		</div> 
@@ -172,17 +174,33 @@ swfobject.registerObject("FlashID");
 
 <!-- 新增標籤 -->
 <script type="text/javascript">
-var input_count = 0;
-function add_input(obj)
+
+function add(obj)
 {
-  var newElement = document.createElement("input");
+  var newElement = document.createElement("div");
+  var tag = document.getElementById("tagValue").value;
   //設定這個input的屬性
-  newElement.type = "text";
-  newElement.name = "newPictag["+input_count+"]";
-  newElement.value = "";
-  newElement.style = "margin-right:5px;width:100px;";
-  input_count ++;
+  //newElement.disabled="disabled";
+  newElement.name = "newPictag[]";
+  newElement.innerHTML = "#" + tag;
+  newElement.style = "margin-right:10px;font-size:15px;display:inline-block;";
+  newElement.setAttribute('onmouseover', ' this.style = "margin-right:10px;font-size:15px;display:inline-block;text-decoration:line-through;"');
+  newElement.setAttribute('onmouseout', ' this.style = "margin-right:10px;font-size:15px;display:inline-block;"');
+  newElement.setAttribute('ondblclick', 'this.parentNode.removeChild(this);');
   //最後再使用appendChild加到要加的元素裡
   obj.appendChild(newElement);
+  document.getElementById("tagValue").value = "";
+}
+
+function addH(objD,objH)
+{
+	for (i = 0;i < objD.children.length;i++) 
+	{
+        var newElement = document.createElement("input");
+        newElement.name = "newPictag[]";
+        newElement.type = "hidden";
+        newElement.value = objD.children[i].innerHTML.substr(1);
+        objH.appendChild(newElement);
+    }
 }
 </script>
