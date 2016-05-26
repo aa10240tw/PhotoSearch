@@ -1050,21 +1050,23 @@
 /*********************************************************************************/
 /* userweb                                                                        */
 /*********************************************************************************/
+
 #userweb-body
 {
-	background-color: #ffffff;
-	
+	background: url("../img/blue.jpg") no-repeat center center;
+	background-attachment: fixed;
+	background-size: cover;
 	background-attachment: fixed;
 	background-size: cover;
 }
-	#userweb-body h1
-	{
-		font-size: 25px;
-	}
-	#userweb-body p
-	{
-		font-size: 15px;
-	}
+#userweb-body h1
+{
+	font-size: 25px;
+}
+#userweb-body p
+{
+	font-size: 15px;
+}
 
 
 #userweb-Header
@@ -1073,16 +1075,17 @@
 	background-color: rgba(0,0,0,1);
 	width: 100%;
 }
+
 #user-leftside
 {
-	margin-top: 60px;
-	margin-left: 50px;
-	width:200px;
-	height: 300px;
-	background-color: #d1f5ed;
-  	border:dashed 2px;
-  	padding-left: 10px;
-	float: left;
+	margin: 5px 5px 5px 5px;
+	background-color: #CCEEFF;
+	padding-left: 10px;
+	border:solid 1px;
+	border-color: #8E8585;
+	width: 160px;
+	height:auto;
+	border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 
 }
 
@@ -1091,27 +1094,22 @@
 
 	margin-left: 300px;
 }
-
-#TabbedPanels1
+#profilePic
 {
-	float: left;
-	margin-left: 100px;
-	width: 65%;
-
+	padding-left:5px;
 }
-	.TabbedPanelsContent
-	{
-		background-color: #d1f5ed;
-		text-align:left;
-		height: 800px;
-	}
 
-	.TabbedPanelsTab:hover
-	{
-		padding: 4px;
-		font-size: 16px;
-		background-color: #b3e2dd;
-	}
-
-
-
+.well
+{
+	background-color: rgba(255, 255, 255,0.5);
+	border-color: #574B4B;
+	border:dashed 1px;
+	border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+	height:450px;
+	padding-left: 50px;
+	OVERFLOW: auto;
+}
+.form-control
+{
+	width: 200px;
+}

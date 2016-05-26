@@ -4,6 +4,7 @@
 	if (!$db) die("錯誤: 無法連接MySQL伺服器!" . mysqli_connect_error());
 	mysqli_select_db($db, "test") or  // 選擇資料庫
 	  	die("錯誤: 無法選擇資料庫!" . mysqli_error($db));
+	
 	//接取表單
 	$search = $_GET['q'];
 	$sql_search = "";

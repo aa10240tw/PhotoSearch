@@ -1,9 +1,7 @@
-<!--上傳資料-->
 <?php
-	$db = mysqli_connect();
+	$db = mysqli_connect("localhost","root","root2048");
 	if (!$db)	die("錯誤: 無法連接MySQL伺服器!" . mysqli_connect_error());
 	mysqli_select_db($db, "test") or die("錯誤: 無法選擇資料庫!" . mysqli_error($db));
-
 	$msg = "";
 	
 	// 是否有上傳檔案資料
@@ -15,7 +13,7 @@
     	if(!is_dir($dir))	mkdir($dir);
     	//獲取new編碼ID
     	$sql_newID = "select auto_increment from information_schema.tables 
-    			where table_schema='test' and table_name='pics'";
+    					where table_schema='test' and table_name='pics'";
     	$result = mysqli_query($db,$sql_newID);
     	$row = $result->fetch_row();
     	$id = $row[0] ;
@@ -23,7 +21,6 @@
     	preg_match("/[a-zA-z0-9]+$/", $_FILES["file"]["type"],$matchs);
     	//建立檔名
     	$_FILES["file"]["name"] = $id.".".$matchs[0];
-
     	//儲存上傳的檔案, 即複製成上傳檔案的檔名
 		if ( $namePic && copy($_FILES["file"]["tmp_name"], $dir.$_FILES["file"]["name"])) 
 		{
@@ -39,8 +36,7 @@
 			$tagPic = $_POST["newPictag"];
 			
 			//插入至pic資料庫
-			$sql_insertP = " insert into pics values
-			(NULL,'".$newPicName."','". $dir.$id.".".$matchs[0]."','".$UserID."','".$introPic."','".$locPic."','".$widthPic."','".$heightPic."','".$authTypePic."','".$typePic."');";
+			$sql_insertP = " insert into pics values (NULL,'".$newPicName."','". $dir.$id.".".$matchs[0]."','".$UserID."','".$introPic."','".$locPic."','".$widthPic."','".$heightPic."','".$authTypePic."','".$typePic."');";
 			mysqli_query($db,$sql_insertP);
 
 			//檢索並插入標籤
@@ -56,7 +52,7 @@
 					}
 				}
 			}
-
+			
 			//新增關聯
 			for($i=0;$i<count($tagPic);$i++)
 			{
@@ -67,15 +63,207 @@
 					mysqli_query($db,$sql_insert);
 				}
 			}
-
-			mysqli_close($db); // 關閉伺服器連接
 			unlink($_FILES["file"]["tmp_name"]);  // 刪除上傳暫存檔案
 			$msg = "檔案上傳成功";//顯示成功訊息
 		}
 		else $msg = "檔案上傳失敗，請填妥資料 ... ";
 	}
 ?>
-<!--sql link-->
+<!--sql msg-->
+<?php 
+	if (!empty($msg)) 
+	{
+		echo "<script language=\"JavaScript\">	window.alert('$msg');	</script>";
+	}
+?>
+<!--sql msg-->
+
+<!--sql-update-->
+<?php
+if(isset($_POST["update"]))
+{
+	$newPass=$_POST["newPass"];
+	$newName=$_POST["newName"];
+	$email=$_POST["email"];
+	$intro=$_POST["intro"];
+	$proPic=$_FILES["proPic"];
+	if($newName)
+	{
+		$sql_update="UPDATE User SET Name = '$newName' WHERE ID='$UserID' ";
+		mysqli_query($db,$sql_update);
+	}
+	if($newPass)
+	{
+		$sql_update="UPDATE User SET Password = '$newPass' WHERE ID='$UserID' ";
+		mysqli_query($db,$sql_update);
+	}
+	if($email)
+	{
+		$sql_update="UPDATE User SET  Mail= '$email' WHERE ID='$UserID' ";
+		mysqli_query($db,$sql_update);
+
+	}
+	if($intro)
+	{
+		$sql_update="UPDATE User SET  Descreption= '$intro' WHERE ID='$UserID' ";
+		mysqli_query($db,$sql_update);
+
+	}
+
+}
+
+?>
+<!--sql-update-->
+
+<!--content-->
+<body id="userweb-body" >
+	<section>
+		<div id="userweb-Header">
+			<nav class="navbar navbar-inverse navbar-fixed-top" style="height:15px;">
+ 				<div class="container-fluid">
+    				<div class="navbar-header">
+     					<a class="navbar-brand" href="../../index.php">PhotoSearch</a>
+    				</div>
+    				<ul class="nav navbar-nav navbar-right" style="padding-right:50px">
+      					<li>
+      						<a href="#" data-toggle="dropdown" >
+      							<?php 
+      								echo  $this->Html->image('default.jpg', 
+      										array(
+	      										'alt' => 'Cinque Terre',
+	      										'class'	=> "img-rounded",
+	      										'width' => "25",
+	      										'height' => "25"));
+      							?> 			
+      						</a>
+      						<ul class="dropdown-menu">
+      							<li><a href="../../User/logout"><span class="glyphicon glyphicon-log-in">登出</span></a></li> </ul>
+     					</li>		
+   					</ul>
+				</div>
+			</nav>
+		</div>
+	</section>
+
+	<div class="container-fluid" style="padding-top:50px;">
+		<h1>　　Photo Search 個人管理</h1>
+		<div class="row" style="padding-right:100px;">
+			<div class="col-sm-4" style="padding-left:120px;" >
+				<section>
+					<?php
+						$sql_ID = "select * from User where ID='".$UserID."'";
+						$result=mysqli_query($db,$sql_ID);
+						$row = $result->fetch_assoc();
+					?>
+					<div id = "profilePic">
+						<br/>
+						<?php 
+							echo $this->Html->image('default.jpg', 
+									array(
+									'alt' => 'Cinque Terre',
+									'class'	=> "img-thumbnail",
+									'style' => "border:solid 1px;width:150px ;height:auto;border-color: #8E8585;"));
+      					?> 		
+					</div>		
+
+					<h2><?php echo $row["Name"]?></h2>
+					<br/>
+					<p><span class="glyphicon glyphicon-user"></span><?php echo"<font color=\"#615F5F\">　帳號<br/>　　$UserID</font>"?></p>
+					<p><span class="glyphicon glyphicon-envelope"></span><?php echo"<font color=\"#615F5F\">　信箱<br/>　　". $row["Mail"] . "</font>"?></p> 
+					<p><span class="glyphicon glyphicon-pencil"></span><?php echo"<font color=\"#615F5F\">　介紹<br/></font>"?></p>  
+					<div id="user-leftside" style="word-break: break-all;padding-right:10px;"> 
+						<?php echo $row["Descreption"] ?> 
+					</div> 
+				</section>
+			</div>
+			<div class="col-sm-8" >
+				<section>
+					<div id=option>
+						<ul class="nav nav-tabs" style="border-color:#194989;">
+							<li class="active"><a data-toggle="tab" href="#menu0">個人資料</a></li>
+							<li><a data-toggle="tab" href="#menu1">相簿管理</a></li>
+							<li><a data-toggle="tab" href="#menu2">上傳圖片</a></li>
+							<li><a data-toggle="tab" href="#menu3">收藏圖片</a></li>
+						</ul>
+						<div class="tab-content">
+							<div id="menu0" class="tab-pane fade in active">
+								<br/>
+								<div class="well" >
+								<h1>更新個人資料</h1><br/>
+									<form method="post" action=""> 
+		  							<label for="pass" >密碼：</label>
+		  							<input type="password" class="form-control" name="newPass" id="newPass" placeholder="新密碼"/>
+		  							<br/>
+		  							<label for="pass">姓名：</label>
+		  							<input type="text" class="form-control" name="newName" id="newName" placeholder="新名稱"/><br/>			  							
+		  							<label for="email">大頭貼：</label>
+		  							<input type="file" name="proPic" style="color:#000" /><br/>
+							  		<label for="email">信箱：</label>
+		  							<input type="text" class="form-control" name="email" id="email" value=""/><br/>
+		  							<label for="email">自我介紹 (200字以內)：</label><br/>
+		  							<textarea type="text" class="form-control" name="intro" id="intro" style="BORDER-RIGHT: 2px dotted; BORDER-TOP: 2px dotted; OVERFLOW: hidden; BORDER-LEFT: 2px dotted; WIDTH: 230px; COLOR: #999;BORDER-BOTTOM: 2px dotted;HEIGHT: 100px"></textarea><br/>
+		      						<input type="submit" class="btn btn-default" name="update" value="更新"/><br/><br/>
+		      						</form>
+								</div>
+							</div>
+							<div id="menu1" class="tab-pane fade">
+								<br/>
+								<div class="well">Basic Well 2</div>
+							</div>
+							<div id="menu2" class="tab-pane fade">
+								<br/>
+								<div class="well" >
+									<h1>上傳檔案</h1><br/>
+        							<form action="" enctype="multipart/form-data" method="post">
+      									<input type="file" name="file" style="color:#000" /><br/>
+						  				<p>
+						  					照片名稱：<br/>
+												<input type="text" class="form-control" name="newPicName" id="newPicName" value=""/> <br/>
+											照片地點：<br/>
+												<textarea class="form-control" type="text" name="newPicLoc" id="newPicLoc" ></textarea><br/>
+											授權型態：<br/>
+												<select class="form-control" name="newPicAuthType" id="newPicAuthType">
+													<option value="1">標示為允許再利用且可修改</option>
+													<option value="2">標示為允許再利用</option>
+													<option value="3">標示為允許已非商業用途再利用且可修改</option>
+													<option value="4">標示為允許已非商業用途再利用</option>
+												</select><br/><br/>
+											照片簡述：(200字以內)	剩餘字數：<span id="wordcount">200</span><br/>
+												<textarea  ="form-control" maxlength="200" type="text" name="newPicintro" id="intro" onkeyup="wordsCount()" style="BORDER-RIGHT: 2px dotted; BORDER-TOP: 2px dotted; OVERFLOW: hidden; BORDER-LEFT: 2px dotted; WIDTH: 230px; COLOR:#999;BORDER-BOTTOM: 2px dotted;HEIGHT: 100px"></textarea><br/><br/>
+											照片標籤：
+												<input class="btn btn-default" type="text" id="tagValue" placeholder="請輸入標籤">
+												<input class="btn btn-default" type="button" value="新增" onclick="add(PicTag)"><br/>
+												<div id ="PicTag"></div>
+												<legend id ="HiddenTag" name="PicTag" type = "hidden"></legend>
+												<br/>
+											</p>
+	  									<input class="btn btn-default" type="submit" style="color:#000" value="上傳檔案" onclick="addH(PicTag,HiddenTag)" /><br/><br/>
+    								</form>
+								</div>
+							</div>
+							<div id="menu3" class="tab-pane fade">
+								<br/>
+								<div class="well" >Basic Well 4</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+<body>
+
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+</script>
+
+<?php 
+	mysqli_close($db); // 關閉伺服器連接
+?>
+
 
 <!-- wordcount -->
 <script type="text/javascript"> 
@@ -86,91 +274,6 @@ function wordsCount()
 }
 </script>
 <!-- wordcount -->
-
-<!-- 顯示使用者身份、nav -->
-<section>
-	<div id="userweb-Header">
-		<?php  
-			echo "<font color=\"#FFFFFF\">　　$UserName  歡迎登入 : )　　|　　<a href=\"../../index.php\">回首頁</a></font>";
-		?>
-	</div>
-</section>
-
-<!-- 使用者頭像 -->
-<section>
-	<dir id="user-leftside">
-		 <h3><?php echo"<font color=\"#20486f\">使用者名稱:$UserName</font>"?></h3>
-	</dir>
-</section>
-
-<!-- 使用者資料、相簿、收藏、編輯功能-->
-<div id="TabbedPanels1" class="TabbedPanels">
-	<ul class="TabbedPanelsTabGroup">
-		<li class="TabbedPanelsTab" tabindex="0">個人資料</li>
-		<li class="TabbedPanelsTab" tabindex="0">相簿</li>
-		<li class="TabbedPanelsTab" tabindex="0">收藏</li>
-		<li class="TabbedPanelsTab" tabindex="0">上傳相片</li>
-		<!-- 若上傳成功顯示＄msg-->
-		<li >
-			<?php 
-				if (!empty($msg)) 
-				{
-  					echo "　<img src='../../webroot/img/3g5.gif'>　[　" . $msg . "　]　";
-				}
-			?>
-		</li>
-	</ul>
-	<!-- 個人資料 -->
-	<div class="TabbedPanelsContentGroup">
-	   	<div class="TabbedPanelsContent" style="height: 500px">
-	      	<p>輸入介紹文字1</p>
-		</div>  
-		<!-- 相簿 -->
-		<div class="TabbedPanelsContent" style="height: 500px">
-	      	<p>輸入介紹文字2</p>
-		</div>  
-		<!-- 收藏 -->
-		<div class="TabbedPanelsContent" style="height: 500px">
-	      	<p>輸入介紹文字3</p>
-		</div>  
-		<!-- 上傳 -->
-		<div class="TabbedPanelsContent" style="height: 500px">
-	  		<div class="UploadPic" style="margin-left:50px">
-	    		<form action="" enctype="multipart/form-data" method="post">
-	  				<input type="file" name="file" style="color:#000" /><br/><br/>
-	  				<p>
-	  					照片名稱：<br/>
-							<input type="text" name="newPicName" id="newPicName" value=""/> <br/><br/>
-						照片地點：<br/>
-							<textarea type="text" name="newPicLoc" id="newPicLoc" style="BORDER-RIGHT: 2px dotted; BORDER-TOP: 2px dotted; OVERFLOW: hidden; BORDER-LEFT: 2px dotted; WIDTH: 230px; COLOR: #999;BORDER-BOTTOM: 2px dotted;HEIGHT: 40px"></textarea><br/><br/>
-						授權型態：<br/>
-							<select name="newPicAuthType" id="newPicAuthType">
-								<option value="1">標示為允許再利用且可修改</option>
-								<option value="2">標示為允許再利用</option>
-								<option value="3">標示為允許已非商業用途再利用且可修改</option>
-								<option value="4">標示為允許已非商業用途再利用</option>
-							</select><br/><br/>
-						照片簡述：(200字以內)	剩餘字數：<span id="wordcount">200</span><br/>
-							<textarea maxlength="200" type="text" name="newPicintro" id="intro" onkeyup="wordsCount()" style="BORDER-RIGHT: 2px dotted; BORDER-TOP: 2px dotted; OVERFLOW: hidden; BORDER-LEFT: 2px dotted; WIDTH: 230px; COLOR:#999;BORDER-BOTTOM: 2px dotted;HEIGHT: 100px"></textarea><br/><br/>
-						照片標籤：
-							<input type="text" id="tagValue" placeholder="請輸入標籤">
-							<input type="button" value="新增" onclick="add(PicTag)"><br/>
-							<div id ="PicTag"></div>
-							<legend id ="HiddenTag" name="PicTag" type = "hidden"></legend>
-							<br/><br/>
-						</p>
-	  				<input type="submit" style="color:#000" value="上傳檔案" onclick="addH(PicTag,HiddenTag)" />
-				</form>
-	    	</div>
-		</div> 
-	</div>
-</div>
-
-<!-- 樣板 -->
-<script type="text/javascript">
-var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
-swfobject.registerObject("FlashID");
-</script>
 
 <!-- 新增標籤 -->
 <script type="text/javascript">
