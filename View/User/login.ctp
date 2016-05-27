@@ -1,8 +1,8 @@
 <!-- 連接資料庫 -->
 <?php
-	$db = mysqli_connect();
+	$db = mysqli_connect("localhost","root","root2048");
 	if (!$db)	die("錯誤: 無法連接MySQL伺服器!" . mysqli_connect_error());
-	mysqli_select_db($db, "test") or die("錯誤: 無法選擇資料庫!" . mysqli_error($db));
+	mysqli_select_db($db, "photosearch") or die("錯誤: 無法選擇資料庫!" . mysqli_error($db));
 ?>
 
 <!-- 剩餘字數 -->
@@ -120,9 +120,10 @@ function wordsCount()
 									$newName=$_POST["newName"];
 									$email=$_POST["email"];
 									$intro=$_POST["intro"];
-									if($newPass&&$newName&&$email)
+									$Propic = "Propic/default.jpg";
+									if($newPass && $newName && $email)
 									{
-										$sql_insert="insert into user values('$newUser','$newName','$intro','$email','$newPass')";
+										$sql_insert="insert into user values('$newUser','$newName','$intro','$email','$newPass','$Propic')";
 										if($result_2=mysqli_query($db,$sql_insert))
 										{
 											echo "　<img src='../webroot/img/3g5.gif'> 恭喜，註冊成功 ! <br/>";	
@@ -136,6 +137,7 @@ function wordsCount()
 								}
 							}
 						}
+						echo "111";
 						mysqli_close($db);  // 關閉伺服器連接
 					?>
 				</section>
