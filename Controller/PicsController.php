@@ -29,6 +29,12 @@ class PicsController extends AppController
 		$this -> layout = 'default';
 		$this -> set('title_for_page','PicProfile');
 	}
+
+	public function Map()
+	{
+		$this -> layout = 'default';
+		$this -> set('title_for_page','Map');
+	}
 }
 
 ?>

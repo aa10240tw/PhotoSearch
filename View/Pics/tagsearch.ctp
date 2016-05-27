@@ -23,23 +23,15 @@
 		$height = 600;
 		$sql_size = " and width < ".$width." and height < ".$height." ";
 	}
-	$authType = $_GET['authType'] - 1;
-	$sql_authType = "";
-	if($authType == 0)
-	{
-		$sql_authType = "and authType between 1 and 4 ";
-	}
-	else
-	{
-		$sql_authType = "and authType = ".$authType;
-	}
+	$authType = $_GET['authType'];
+	
 	//搜尋
 	if(!empty($search))
 	{
 		//標籤關鍵字
-		$sql = "select image from pics , Pic_tag
+		$sql = "select * from pics , Pic_tag
 				where pics.ID = Pic_tag.Pic_ID and 
-				Pic_tag.tag_name = '".$search."'".$sql_authType.$sql_size."; ";
+				Pic_tag.tag_name = '".$search."' and AuthType = ".$authType.$sql_size."; ";
 	}
 	else
 	{
@@ -49,8 +41,8 @@
 	$result = mysqli_query($db,$sql);
 ?>
 
-<div class="l-container">
-    <div class="photos" data-row-grid='{"minMargin":5,"maxMargin":5,"itemSelector":".photo-item","firstItemClass":"first-item","lastRowClass":"last-row","resize":true,"minWidth":426}'>
+<div style="overflow: visible">
+	<ul class="polaroids">
     <!-- 圖片顯示 -->
     <?php 
         if(empty($result))	echo "Error!";
@@ -66,17 +58,18 @@
         		echo "<p>您所搜尋標籤為：".$search."</p>";
         		for($i=0; $i < count($show); $i++)
 				{
-					echo '<article class="photo-item" style="width: 459px; height: =306px;">
-		                <a href="https://www.pexels.com/photo/nature-sunny-field-sun-97778/" >
-		            	<img height= "350px"  src="../webroot/'.$show[$i][0].'" style="background:rgb(98,108,75)" ></img>
-		            	</a>
-		                <button class="btn-like btn-like--small photo-item__info">
-		                    <svg class="icon-heart" viewbox="0 0 100 100">
-		                        <use xlink:href="#iconHeart">
-		                        </use>
-		                    </svg>
-		                </button>
-		                </article>';
+					echo '<li>
+					<a href="profile?varname='.$show[$i][0].'" title="'.$show[$i][1].'">
+                        <img alt="Roeland!" src="../webroot/'.$show[$i][2].'">
+                        </img>
+                        <iframe width="0" height="0" name="actionframe" style="visibility:hidden;display:none"></iframe> <!--提交表單而不跳轉-->
+                        <form action="myFunction()" target="actionframe">
+	                        <button class="btn btn-success" onclick="myFunction()">
+					            收藏
+					        </button>
+					    </form> 
+                    </a>
+                	</li>';
 				}
         	}
         }
@@ -91,13 +84,14 @@
         }
 		mysqli_close($db);
 	?>
+	</ul>
 	</div>
-</div>
+
+	<script type="text/javascript">
+		function myFunction() {
+		    alert("我將執行收藏功能");
+		}
+	</script>
         
-<svg class="hidden">
-    <defs>
-        <path d="M84.417 38.466c0 5.63-2.407 10.7-6.248 14.233L50 80.866 21.832 52.7c-3.842-3.535-6.25-8.604-6.25-14.234 0-10.677 8.656-19.333 19.334-19.333 5.492 0 10.45 2.29 13.97 5.968.39.41.763.834 1.114 1.274.354-.44.725-.865 1.115-1.273 3.52-3.676 8.478-5.967 13.97-5.967 10.677 0 19.332 8.656 19.332 19.333z" id="iconHeart">
-        </path>
-    </defs>
-</svg>
+
         

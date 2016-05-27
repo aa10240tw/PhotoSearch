@@ -8,9 +8,14 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<!-- Latest compiled JavaScript -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 	<?php
-		echo $this->Html->css('display');
-		echo $this->Html->script('display');
+		echo $this->Html->css('offcanvas');
+		echo $this->Html->css('polaroids');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
