@@ -26,7 +26,7 @@ class PicsController extends AppController
 
 	public function profile()
 	{
-		$this -> layout = 'default';
+		$this -> layout = 'imgprofile';
 		$this -> set('title_for_page','PicProfile');
 	}
 

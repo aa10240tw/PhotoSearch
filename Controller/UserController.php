@@ -89,9 +89,14 @@ class UserController extends AppController
       	$userInfo = $result->fetch_row();
 		
 		session_start();
-      	if(empty($userInfo))
+      	if(empty($userInfo))//無此ID
       	{
       		header("Location:/demo/index.php");//直接跳入首頁
+      		exit;
+      	}
+      	elseif($_SESSION && $_SESSION["userID"] == $userID)
+      	{
+      		header("Location:/demo/User/profile/".$userID);//跳入個人編輯頁面
       		exit;
       	}
       	else

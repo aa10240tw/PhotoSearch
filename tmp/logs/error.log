@@ -20662,3 +20662,512 @@ Stack Trace:
 #1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PicsController), Object(CakeRequest))
 #2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2016-05-27 12:54:15 Error: [MissingActionException] Action PicsController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'PicsController',
+  'action' => 'css',
+)
+Request URL: /demo/Pics/css/style-desktop.css
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PicsController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 12:54:15 Error: [MissingActionException] Action PicsController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'PicsController',
+  'action' => 'css',
+)
+Request URL: /demo/Pics/css/style.css
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PicsController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 12:54:37 Error: [MissingActionException] Action PicsController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'PicsController',
+  'action' => 'css',
+)
+Request URL: /demo/Pics/css/style.css
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PicsController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 12:54:37 Error: [MissingActionException] Action PicsController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'PicsController',
+  'action' => 'css',
+)
+Request URL: /demo/Pics/css/style-desktop.css
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PicsController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 12:55:31 Error: [MissingActionException] Action PicsController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'PicsController',
+  'action' => 'css',
+)
+Request URL: /demo/Pics/css/style.css
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PicsController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 12:55:31 Error: [MissingActionException] Action PicsController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'PicsController',
+  'action' => 'css',
+)
+Request URL: /demo/Pics/css/style-desktop.css
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PicsController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 12:58:57 Error: [MissingLayoutException] Layout file "Layouts\imgprofile.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Layouts\\imgprofile.ctp',
+)
+Request URL: /demo/Pics/profile?varname=1
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\View\View.php(514): View->_getLayoutFileName('imgprofile')
+#1 C:\AppServ\www\demo\Lib\Cake\View\View.php(481): View->renderLayout('', 'imgprofile')
+#2 C:\AppServ\www\demo\Lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#3 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#4 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PicsController), Object(CakeRequest))
+#5 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2016-05-27 12:58:58 Error: [MissingActionException] Action PicsController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'PicsController',
+  'action' => 'css',
+)
+Request URL: /demo/Pics/css/style.css
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PicsController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 12:58:58 Error: [MissingActionException] Action PicsController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'PicsController',
+  'action' => 'css',
+)
+Request URL: /demo/Pics/css/style-desktop.css
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PicsController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 13:01:25 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /demo/css/bootstrap.min.css
+Stack Trace:
+#0 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-05-27 13:02:59 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /demo/css/bootstrap.min.css
+Stack Trace:
+#0 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-05-27 13:03:39 Error: [MissingActionException] Action UserController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'images',
+)
+Request URL: /demo/User/images/blue.jpg
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 13:05:55 Error: [MissingActionException] Action UserController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'images',
+)
+Request URL: /demo/User/images/blue.jpg
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 13:08:46 Error: [MissingActionException] Action UserController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'images',
+)
+Request URL: /demo/User/images/blue.jpg
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 13:11:09 Error: [MissingActionException] Action UserController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'images',
+)
+Request URL: /demo/User/images/blue.jpg
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 13:11:25 Error: [MissingActionException] Action UserController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'css',
+)
+Request URL: /demo/User/css/style.css
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 13:11:25 Error: [MissingActionException] Action UserController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'css',
+)
+Request URL: /demo/User/css/style-desktop.css
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 13:11:49 Error: [MissingActionException] Action UserController::profile40247008S() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'profile40247008S',
+)
+Request URL: /demo/User/profile40247008S
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 13:11:49 Error: [MissingActionException] Action UserController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'css',
+)
+Request URL: /demo/User/css/style-desktop.css
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 13:11:49 Error: [MissingActionException] Action UserController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'css',
+)
+Request URL: /demo/User/css/style.css
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 13:12:03 Error: [MissingControllerException] Controller class UseruserpageController could not be found.
+Exception Attributes: array (
+  'class' => 'UseruserpageController',
+  'plugin' => NULL,
+)
+Request URL: /demo/Useruserpage/40247008S
+Stack Trace:
+#0 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-05-27 13:12:04 Error: [MissingControllerException] Controller class UseruserpageController could not be found.
+Exception Attributes: array (
+  'class' => 'UseruserpageController',
+  'plugin' => NULL,
+)
+Request URL: /demo/Useruserpage/css/style-desktop.css
+Stack Trace:
+#0 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-05-27 13:12:04 Error: [MissingControllerException] Controller class UseruserpageController could not be found.
+Exception Attributes: array (
+  'class' => 'UseruserpageController',
+  'plugin' => NULL,
+)
+Request URL: /demo/Useruserpage/css/style.css
+Stack Trace:
+#0 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-05-27 13:12:08 Error: [MissingActionException] Action UserController::]userpage() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => ']userpage',
+)
+Request URL: /demo/User/]userpage/40247008S
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 13:12:08 Error: [MissingActionException] Action UserController::]userpage() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => ']userpage',
+)
+Request URL: /demo/User/]userpage/css/style.css
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 13:12:08 Error: [MissingActionException] Action UserController::]userpage() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => ']userpage',
+)
+Request URL: /demo/User/]userpage/css/style-desktop.css
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 13:12:36 Error: [MissingActionException] Action UserController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'css',
+)
+Request URL: /demo/User/css/style-desktop.css
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 13:12:47 Error: [MissingActionException] Action UserController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'css',
+)
+Request URL: /demo/User/css/style.css
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 13:12:47 Error: [MissingActionException] Action UserController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'css',
+)
+Request URL: /demo/User/css/style-desktop.css
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 13:13:01 Error: [MissingActionException] Action UserController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'images',
+)
+Request URL: /demo/User/images/blue.jpg
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 13:14:14 Error: [MissingActionException] Action UserController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'images',
+)
+Request URL: /demo/User/images/blue.jpg
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 13:15:02 Error: [MissingActionException] Action UserController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'images',
+)
+Request URL: /demo/User/images/blue.jpg
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 13:15:46 Error: [MissingActionException] Action UserController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'images',
+)
+Request URL: /demo/User/images/blue.jpg
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 13:16:14 Error: [MissingActionException] Action UserController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'images',
+)
+Request URL: /demo/User/images/blue.jpg
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 13:16:34 Error: [MissingActionException] Action UserController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'images',
+)
+Request URL: /demo/User/images/blue.jpg
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 15:18:38 Error: [MissingActionException] Action UserController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'css',
+)
+Request URL: /demo/User/css/style.css
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 15:18:38 Error: [MissingActionException] Action UserController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'css',
+)
+Request URL: /demo/User/css/style-desktop.css
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 15:19:17 Error: [MissingActionException] Action PicsController::myFunction()() could not be found.
+Exception Attributes: array (
+  'controller' => 'PicsController',
+  'action' => 'myFunction()',
+)
+Request URL: /demo/Pics/myFunction()
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PicsController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 15:19:17 Error: [MissingActionException] Action PicsController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'PicsController',
+  'action' => 'css',
+)
+Request URL: /demo/Pics/css/style-mobile.css
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PicsController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 15:19:17 Error: [MissingActionException] Action PicsController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'PicsController',
+  'action' => 'css',
+)
+Request URL: /demo/Pics/css/style.css
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PicsController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 15:20:01 Error: [MissingActionException] Action UserController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'images',
+)
+Request URL: /demo/User/images/blue.jpg
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 15:22:07 Error: [MissingActionException] Action UserController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'images',
+)
+Request URL: /demo/User/images/blue.jpg
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 15:23:43 Error: [MissingActionException] Action UserController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'images',
+)
+Request URL: /demo/User/images/blue.jpg
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 15:23:55 Error: [MissingActionException] Action UserController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'css',
+)
+Request URL: /demo/User/css/style.css
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 15:23:55 Error: [MissingActionException] Action UserController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'css',
+)
+Request URL: /demo/User/css/style-desktop.css
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 15:24:05 Error: [MissingActionException] Action UserController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'images',
+)
+Request URL: /demo/User/images/blue.jpg
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-05-27 15:24:13 Error: [MissingActionException] Action UserController::images() could not be found.
+Exception Attributes: array (
+  'controller' => 'UserController',
+  'action' => 'images',
+)
+Request URL: /demo/User/images/blue.jpg
+Stack Trace:
+#0 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\AppServ\www\demo\Lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UserController), Object(CakeRequest))
+#2 C:\AppServ\www\demo\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

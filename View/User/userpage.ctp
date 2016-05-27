@@ -61,7 +61,7 @@
 
 <body id="body" data-spy="scroll" data-target=".navbar" data-offset="50">
 
-<embed src="http://b1.rimg.tw/oei/c9e2386c.swf" width=100% style="position: relative; left: 400px; top: -100px" height="100px"; quality="high" wmode="transparent" align="RIGHT" bgcolor="#D6D6D6"></embed>
+<embed src="http://b1.rimg.tw/oei/c9e2386c.swf" width=100vw style="position: absolute; left: 0px; top: -100px" height="100px"; quality="high" wmode="transparent" align="RIGHT" bgcolor="#D6D6D6"></embed>
 
 <div  class="container-fluid" 
   style="background-color:rgba(255,255,255,0);;color:#44648E; height:auto; padding-bottom:20px" >
@@ -153,3 +153,4 @@
   mysqli_close($db); // 關閉伺服器連接
 ?>
 
+</body>
