@@ -6,6 +6,11 @@
 	  	die("錯誤: 無法選擇資料庫!" . mysqli_error($db));
 	
 	//接取表單
+	if(empty($_GET))
+	{
+		header("Location:/demo/index.php");
+		exit;
+	}
 	$search = $_GET['q'];
 	$sql = "";
 	$size = $_GET['size'];
@@ -55,7 +60,7 @@
         	}
         	else
         	{
-        		echo "<p>您所搜尋標籤為：".$search."</p>";
+        		echo "<p>您所搜尋的標籤為：".$search."</p>";
         		for($i=0; $i < count($show); $i++)
 				{
 					echo '<li>

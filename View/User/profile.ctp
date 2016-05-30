@@ -243,8 +243,9 @@ if(isset($_POST["update"]))
 
 								  		<label for="email">信箱：</label>
 			  								<input type="text" class="form-control" name="email" id="email" value=""/><br/>
-			  							<label for="email">自我介紹 (200字以內)：</label><br/>
-			  								<textarea type="text" class="form-control" name="intro" id="intro" style="BORDER-RIGHT: 2px dotted; BORDER-TOP: 2px dotted; OVERFLOW: hidden; BORDER-LEFT: 2px dotted; WIDTH: 230px; COLOR: #999;BORDER-BOTTOM: 2px dotted;HEIGHT: 100px"></textarea><br/>
+			  							<label for="email">自我介紹 (200字以內)：剩餘字數</label><span id="wordcount0">200</span><br/>
+			  								<textarea type="text" class="form-control" name="intro" 
+			  								id="myIntro" onkeyup="wordsCount('myIntro','wordcount0')" style="BORDER-RIGHT: 2px dotted; BORDER-TOP: 2px dotted; OVERFLOW: hidden; BORDER-LEFT: 2px dotted; WIDTH: 230px; COLOR: #999;BORDER-BOTTOM: 2px dotted;HEIGHT: 100px"></textarea><br/>
 		      							<input type="submit" class="btn btn-default" name="update" value="更新"/><br/><br/>
 		      						</form>
 								</div>
@@ -290,8 +291,8 @@ if(isset($_POST["update"]))
 													<option value="3">標示為允許已非商業用途再利用且可修改</option>
 													<option value="4">標示為允許已非商業用途再利用</option>
 												</select><br/><br/>
-											照片簡述：(200字以內)	剩餘字數：<span id="wordcount">200</span><br/>
-												<textarea  ="form-control" maxlength="200" type="text" name="newPicintro" id="intro" onkeyup="wordsCount()" style="BORDER-RIGHT: 2px dotted; BORDER-TOP: 2px dotted; OVERFLOW: hidden; BORDER-LEFT: 2px dotted; WIDTH: 230px; COLOR:#999;BORDER-BOTTOM: 2px dotted;HEIGHT: 100px"></textarea><br/><br/>
+												照片簡述：(200字以內)	剩餘字數：<span id="wordcount1">200</span><br/>
+												<textarea  ="form-control" maxlength="200" type="text" name="newPicintro" id="newPicintro" onkeyup="wordsCount('newPicintro','wordcount1')" style="BORDER-RIGHT: 2px dotted; BORDER-TOP: 2px dotted; OVERFLOW: hidden; BORDER-LEFT: 2px dotted; WIDTH: 230px; COLOR:#999;BORDER-BOTTOM: 2px dotted;HEIGHT: 100px"></textarea><br/><br/>
 											照片標籤：
 												<input class="btn btn-default" type="text" id="tagValue" placeholder="請輸入標籤">
 												<input class="btn btn-default" type="button" value="新增" onclick="add(PicTag)"><br/>
@@ -329,10 +330,10 @@ $(document).ready(function(){
 
 <!-- wordcount -->
 <script type="text/javascript"> 
-function wordsCount() 
+function wordsCount(str1,str2) 
 {
-	var total = document.getElementById('intro').value.length; 
-	document.getElementById('wordcount').innerHTML = 200-total;
+	var total = document.getElementById(str1).value.length; 
+	document.getElementById(str2).innerHTML = 200-total;
 }
 </script>
 <!-- wordcount -->

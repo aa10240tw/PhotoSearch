@@ -5,6 +5,11 @@
 	mysqli_select_db($db, "photosearch") or  // 選擇資料庫
 	  	die("錯誤: 無法選擇資料庫!" . mysqli_error($db));
 	//接取表單
+	if(empty($_GET))
+	{
+		header("Location:/demo/index.php");
+		exit;
+	}
 	$search = $_GET['q'];
 	$sql_searh = "";
 	if(!empty($search))
@@ -37,9 +42,11 @@
 	<ul class="polaroids">
     <?php 
         //圖片顯示
-        if(empty($result))	echo "No Search!";
+        if(empty($result)){	echo "No Search!";	}	
         else
         {
+        	if(empty($search)){		echo "<p>所有圖片列表：</p>";	}
+        	else{	echo "<p>您所搜尋的關鍵字為：".$search."</p>";	}
         	$show = mysqli_fetch_all($result,MYSQLI_NUM);	
 			for($i=0; $i < count($show); $i++)
 			{

@@ -29,7 +29,14 @@ class PicsController extends AppController
 		$this -> layout = 'imgprofile';
 		$this -> set('title_for_page','PicProfile');
 	}
-
+	public function erprofile()
+	{
+		$this -> set('title_for_page','Error');
+		$this -> autoRender = FALSE;
+		echo "Sorry! This picture has been delete!";
+		header("Refresh:1; url=/demo/index.php");
+		exit;
+	}
 	public function Map()
 	{
 		$this -> layout = 'default';
