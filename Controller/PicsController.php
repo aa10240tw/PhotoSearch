@@ -14,12 +14,14 @@ class PicsController extends AppController
 
 	public function keysearch()
 	{
+		session_start();
 		$this -> layout = 'search';
 		$this -> set('title_for_page','KeySearch');
 	}
 
 	public function tagsearch()
 	{
+		session_start();
 		$this -> layout = 'search';
 		$this -> set('title_for_page','TagSearch');
 	}

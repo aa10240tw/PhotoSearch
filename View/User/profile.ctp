@@ -68,6 +68,7 @@
 			$msg = "檔案上傳成功";//顯示成功訊息
 		}
 		else $msg = "檔案上傳失敗，請填妥資料 ... ";
+		header("refresh:0;");
 	}
 ?>
 <!--sql msg-->
@@ -131,6 +132,9 @@ if(isset($_POST["update"]))
 		}
 		unlink($_FILES["Pic"]["tmp_name"]);  // 刪除上傳暫存檔案
 	}
+	echo "<script>alert(\"".'更新成功'."\")</script>";
+	header("refresh:0;");
+	exit;
 }
 
 ?>
@@ -150,7 +154,6 @@ if(isset($_POST["update"]))
 		{
 			$dir = "../webroot/uploadPic/";
 			$img =  $dir.$picID.".".$typeRow[0];
-			echo $img;
 			unlink($img);//將檔案刪除
 			$sql_deletePic="delete from pics WHERE ID ='".$picID."'";
 			$result=mysqli_query($db,$sql_deletePic);
@@ -158,7 +161,27 @@ if(isset($_POST["update"]))
 		}
 		else
 		{
-			echo "<script language=\"JavaScript\">window.alert('成功刪除失敗');</script>";
+			echo "<script language=\"JavaScript\">window.alert('刪除失敗');</script>";
+		}
+	}
+?>
+<!--deletePic-->
+
+
+<!--deletePic-->
+<?php
+	if(isset($_POST["deletePic"]))
+	{
+		$picID=$_POST['picID'];
+		$sql_deleteFile="delete from collect WHERE Pic_ID ='$picID'";
+		$result=mysqli_query($db,$sql_deleteFile);
+		if($result)
+		{
+			echo "<script language=\"JavaScript\">window.alert('解除收藏圖片');</script>";
+		}
+		else
+		{
+			echo "<script language=\"JavaScript\">window.alert('解除收藏失敗');</script>";
 		}
 	}
 ?>
@@ -234,7 +257,8 @@ if(isset($_POST["update"]))
 								<div class="well" >
 								<h1>更新個人資料</h1><br/>
 									<form method="post" action="" enctype="multipart/form-data"> 
-										<input type="file" name="Pic" style="color:#000" /><br/>
+										<label for="pass" >頭貼：</label>
+											<input type="file" name="Pic" style="color:#000" /><br/>
 										<label for="pass" >密碼：</label>
 			  								<input type="password" class="form-control" name="newPass" id="newPass" placeholder="新密碼"/>
 			  							<br/>
@@ -261,12 +285,14 @@ if(isset($_POST["update"]))
 									while ($row = $result->fetch_row()) 
 									{
 										echo "<span style=\"float:left;\">
-											  <img src=\"../../webroot/".$row[2]."\" class=\"img-rounded\" width=\"auto\" height=\"150\" style=\"margin-top:10px;\">
-											  	<br/><br/>
+											<div style=\"margin-top:10px;margin-right:5PX;overflow:hidden;width:150px;height:150px;\">
+											  	<img src=\"../../webroot/".$row[2]."\" width=\"150px\">
+											 </div>
+											  	<p>".$row[1]."</p>
 											  	<form method=\"post\" action=\"\">
 											  		<input type=\"hidden\" value=\"".$row[0]."\" name=\"picID\">
-													<input type=\"submit\" class=\"btn btn-primary\" name=\"delete\" value=\"刪除\">".$row[1]."</input> 
-												</form>　
+													<input type=\"submit\" class=\"btn btn-primary\" name=\"delete\" value=\"刪除\"></input>
+												</form>
 											</span>";	
 									}
 								?>
@@ -306,7 +332,26 @@ if(isset($_POST["update"]))
 							</div>
 							<div id="menu3" class="tab-pane fade">
 								<br/>
-								<div class="well" >Basic Well 4</div>
+								<div class="well" >
+								<?php
+								$sql_searchPic="SELECT * FROM collect,pics WHERE collect.UserID='$UserID' and Pic_ID = ID;";
+								$result=mysqli_query($db,$sql_searchPic);
+								while ($row = $result->fetch_row()) 
+								{
+									#echo var_dump($row);
+									echo "<span style=\"float:left;\">
+											<div style=\"margin-top:10px;margin-right:5PX;overflow:hidden;width:150px;height:150px;\">
+											  	<img src=\"../../webroot/".$row[4]."\" width=\"150px\">
+											 </div>
+											  	<p>".$row[3]."</p>
+											  	<form method=\"post\" action=\"\">
+											  		<input type=\"hidden\" value=\"".$row[0]."\" name=\"picID\">
+													<input type=\"submit\" class=\"btn btn-primary\" name=\"deletePic\" value=\"刪除\"></input>
+												</form>
+											</span>";	
+								}
+								?>
+								</div>
 							</div>
 						</div>
 					</div>
