@@ -7,7 +7,7 @@
 </style>
 
 <?php
-	$db = mysqli_connect();
+	$db = mysqli_connect("localhost","root","root2048");
 	if (!$db) die("錯誤: 無法連接MySQL伺服器!" . mysqli_connect_error());
 	mysqli_select_db($db, "photosearch") or die("錯誤: 無法選擇資料庫!" . mysqli_error($db));
 	if(empty($_GET))
