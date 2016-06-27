@@ -15,7 +15,7 @@ function wordsCount()
 </script>
 
 <!-- Header -->
-<div id="userweb-Header" style="color: #000 ">
+<div id="userweb-Header" style="height:40px;background-color:black;padding-top:11px;">
 	<font color="#FFF">　　Photo Search　會員專區　|　<a href="../index.php" >首頁</a></font>
 </div>
 <!-- Header --> 
