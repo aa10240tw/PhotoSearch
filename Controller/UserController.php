@@ -55,7 +55,7 @@ class UserController extends AppController
 		$this -> set('UserID',$UserID);
 
 		//設定頭貼
-		$db = mysqli_connect();
+		$db = mysqli_connect("localhost","root","root2048");
       	if (!$db) die("錯誤: 無法連接MySQL伺服器!" . mysqli_connect_error());
      	mysqli_select_db($db, "photosearch") or die("錯誤: 無法選擇資料庫!" . mysqli_error($db));
       	$sql = "select * from user where ID = '$UserID'";
@@ -80,7 +80,7 @@ class UserController extends AppController
 		
 		
 		//連接資料庫
-		$db = mysqli_connect();
+		$db = mysqli_connect("localhost","root","root2048");
       	if (!$db) die("錯誤: 無法連接MySQL伺服器!" . mysqli_connect_error());
      	mysqli_select_db($db, "photosearch") or die("錯誤: 無法選擇資料庫!" . mysqli_error($db));
       	
