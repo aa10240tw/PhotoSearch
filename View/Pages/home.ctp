@@ -73,7 +73,7 @@ else
 <!-- Main -->
 
 <!-- Footer -->
-	<div id="footer">
+	<div style="background-color:black;text-align:center;overflow:hidden;">
 		<ul class="contact" style="font-size: 10px">
 			<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
 			<li class="active"><a href="https://www.facebook.com/ntnucsieclub/" class="fa fa-facebook"><span>Facebook</span></a></li>
