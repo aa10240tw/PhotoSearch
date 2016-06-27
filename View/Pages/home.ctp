@@ -1,3 +1,9 @@
+<style>
+body{
+	font-family: Microsoft JhengHei;
+}
+
+</style>
 <div class="homepage">
 <?php 
 session_start();

@@ -1,3 +1,10 @@
+<style>
+body{
+	font-family: Microsoft JhengHei;
+}
+</style>
+
+
 <?php
 	$db = mysqli_connect("localhost","root","root2048");
 	if (!$db)	die("錯誤: 無法連接MySQL伺服器!" . mysqli_connect_error());
@@ -242,6 +249,7 @@ if(isset($_POST["update"]))
 					</div> 
 				</section>
 			</div>
+			
 			<div class="col-sm-8" >
 				<section>
 					<div id=option>

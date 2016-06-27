@@ -1,3 +1,11 @@
+<style>
+body{
+	font-family: Microsoft JhengHei;
+}
+
+</style>
+
+
 <!-- 連接資料庫 -->
 <?php
 	$db = mysqli_connect("localhost","root","root2048");
