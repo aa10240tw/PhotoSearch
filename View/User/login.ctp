@@ -137,7 +137,7 @@ function wordsCount()
 								}
 							}
 						}
-						echo "111";
+						
 						mysqli_close($db);  // 關閉伺服器連接
 					?>
 				</section>
